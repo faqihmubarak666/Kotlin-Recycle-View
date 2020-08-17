@@ -7,15 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.os.bundleOf
-import androidx.fragment.app.FragmentActivity
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.day10_recycle_view.language.viewmodel.SongViewModel
-import com.example.ktn_ak05c01recyclerviewdelete.album.utils.ConvertBitmap
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.song_recycle_view.view.*
 
 class SongRecycleAdapter(private val songViewModel: SongViewModel) :
     RecyclerView.Adapter<SongViewHolder>() {
@@ -38,7 +33,7 @@ class SongRecycleAdapter(private val songViewModel: SongViewModel) :
         holder.songTitle.text = songViewModel.songData.value!![position]["title"]
         holder.index = position
         var imageName = songViewModel.songData.value!![position]["image"]
-        ConvertBitmap(holder.imageSong).execute(imageName)
+        Glide.with(context).load(imageName).into(holder.imageSong)
         holder.itemView.setOnClickListener(holder)
     }
 }
