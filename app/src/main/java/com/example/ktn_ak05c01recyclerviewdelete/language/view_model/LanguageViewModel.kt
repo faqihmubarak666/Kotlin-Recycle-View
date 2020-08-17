@@ -15,7 +15,6 @@ class LanguageVieModel : ViewModel() {
     fun addLanguage(name: String) {
         languageList.add(name)
         languageLiveData.value = languageList
-//        println(languageLiveData.value?.joinToString())
     }
 
     fun removeLanguage(position: Int) {
