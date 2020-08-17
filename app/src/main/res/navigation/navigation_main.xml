@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/listSongFragment">
+
+    <fragment
+        android:id="@+id/addSongFragment"
+        android:name="com.example.ktn_ak05c01recyclerviewdelete.album.screen.AddSongFragment"
+        android:label="fragment_add_song"
+        tools:layout="@layout/fragment_add_song" />
+    <fragment
+        android:id="@+id/listSongFragment"
+        android:name="com.example.ktn_ak05c01recyclerviewdelete.album.screen.ListSongFragment"
+        android:label="fragment_list_song"
+        tools:layout="@layout/fragment_list_song" >
+        <action
+            android:id="@+id/action_listSongFragment_to_detailSongFragment2"
+            app:destination="@id/detailSongFragment" />
+        <action
+            android:id="@+id/action_listSongFragment_to_addSongFragment2"
+            app:destination="@id/addSongFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailSongFragment"
+        android:name="com.example.ktn_ak05c01recyclerviewdelete.album.screen.DetailSongFragment"
+        android:label="fragment_detail_song"
+        tools:layout="@layout/fragment_detail_song" />
+</navigation>
