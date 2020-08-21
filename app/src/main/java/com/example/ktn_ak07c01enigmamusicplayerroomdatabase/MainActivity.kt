@@ -1,8 +1,7 @@
-package com.example.ktn_ak05c01recyclerviewdelete
+package com.example.ktn_ak07c01enigmamusicplayerroomdatabase
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
 
 class MainActivity : AppCompatActivity() {
 

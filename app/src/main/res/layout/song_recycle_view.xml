@@ -24,6 +24,7 @@
                 android:id="@+id/image_song"
                 android:layout_width="130dp"
                 android:layout_height="110dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/ic_baseline_image_24" />
 
             <LinearLayout
@@ -46,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Artis Song"
-                    android:textSize="15dp" />
+                    android:textSize="20dp" />
 
             </LinearLayout>
 

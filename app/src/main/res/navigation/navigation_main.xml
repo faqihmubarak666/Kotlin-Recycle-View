@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/addSongFragment"
-        android:name="com.example.ktn_ak05c01recyclerviewdelete.album.screen.AddSongFragment"
+        android:name="com.example.ktn_ak07c01enigmamusicplayerroomdatabase.album.screen.AddSongFragment"
         android:label="fragment_add_song"
         tools:layout="@layout/fragment_add_song" />
     <fragment
         android:id="@+id/listSongFragment"
-        android:name="com.example.ktn_ak05c01recyclerviewdelete.album.screen.ListSongFragment"
+        android:name="com.example.ktn_ak07c01enigmamusicplayerroomdatabase.album.screen.ListSongFragment"
         android:label="fragment_list_song"
         tools:layout="@layout/fragment_list_song" >
         <action
@@ -24,7 +24,16 @@
     </fragment>
     <fragment
         android:id="@+id/detailSongFragment"
-        android:name="com.example.ktn_ak05c01recyclerviewdelete.album.screen.DetailSongFragment"
+        android:name="com.example.ktn_ak07c01enigmamusicplayerroomdatabase.album.screen.DetailSongFragment"
         android:label="fragment_detail_song"
-        tools:layout="@layout/fragment_detail_song" />
+        tools:layout="@layout/fragment_detail_song" >
+        <action
+            android:id="@+id/action_detailSongFragment_to_addTitleFragment"
+            app:destination="@id/addTitleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTitleFragment"
+        android:name="com.example.ktn_ak07c01enigmamusicplayerroomdatabase.album.screen.AddTitleFragment"
+        android:label="fragment_add_title"
+        tools:layout="@layout/fragment_add_title" />
 </navigation>

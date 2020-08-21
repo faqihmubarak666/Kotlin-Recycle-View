@@ -20,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -29,7 +30,7 @@
                 android:id="@+id/image_detail"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginVertical="10dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/ic_baseline_image_24" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -41,15 +42,30 @@
                 android:textAlignment="center"
                 android:textSize="40dp" />
 
-            <ImageView
-                android:id="@+id/imageView"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/titleRecycleView"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginVertical="20dp"
-                android:src="@drawable/ic_baseline_play_circle_filled_24" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/colorBlue"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_add_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/songRecycleView"
+        app:layout_constraintTop_toBottomOf="@+id/songRecycleView"
+        app:layout_constraintVertical_bias="1.0"
+        app:maxImageSize="50dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.ktn_ak05c01recyclerviewdelete.album.screen
+package com.example.ktn_ak07c01enigmamusicplayerroomdatabase.album.screen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,15 +11,16 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.day10_recycle_view.language.viewmodel.SongViewModel
-import com.example.ktn_ak05c01recyclerviewdelete.R
-import com.example.ktn_ak05c01recyclerviewdelete.SongRecycleAdapter
+import com.example.ktn_ak07c01enigmamusicplayerroomdatabase.R
+import com.example.ktn_ak07c01enigmamusicplayerroomdatabase.album.recycle_view.SongRecycleAdapter
+import com.example.ktn_ak07c01enigmamusicplayerroomdatabase.album.view_model.TitleViewModel
 import kotlinx.android.synthetic.main.fragment_list_song.*
 
 
 class ListSongFragment : Fragment(), View.OnClickListener {
 
     val  songViewModel by activityViewModels<SongViewModel>()
-    lateinit var adapter: SongRecycleAdapter
+    lateinit var songRecycleAdapter: SongRecycleAdapter
     lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,11 +37,14 @@ class ListSongFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        songRecycleView.layoutManager = LinearLayoutManager(this.context)
-        adapter = SongRecycleAdapter(songViewModel)
-        songRecycleView.adapter = adapter
 
-        songViewModel.songData.observe(viewLifecycleOwner, Observer { adapter.notifyDataSetChanged() })
+        songRecycleView.layoutManager = LinearLayoutManager(this.context)
+
+        songViewModel.allSong.observe(viewLifecycleOwner, Observer {
+            songRecycleAdapter = SongRecycleAdapter(it, songViewModel)
+            songRecycleView.adapter = songRecycleAdapter
+        })
+
 
         floatingActionButton.setOnClickListener(this)
 
@@ -52,7 +56,5 @@ class ListSongFragment : Fragment(), View.OnClickListener {
             floatingActionButton -> {navController.navigate(R.id.action_listSongFragment_to_addSongFragment2)}
         }
     }
-
-
 
 }
